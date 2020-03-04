@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+
+            <TextView
+                    android:id="@+id/tv_intro"
+                    android:text="@string/bmi_intro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" android:textColor="@android:color/black"/>
+
+            <TextView
+                    android:id="@+id/tv_bb"
+                    android:text="@string/beratbadan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/ed_bb"/>
+
+            <EditText
+                    android:id="@+id/ed_bb"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_intro"
+                    app:layout_constraintStart_toEndOf="@+id/tv_bb" android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp" android:inputType="numberDecimal" android:hint="@string/nomor"
+                    android:importantForAutofill="no" tools:targetApi="o"/>
+
+            <TextView
+                    android:id="@+id/tv_tinggi"
+                    android:text="@string/tinggi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/ed_tinggi"/>
+
+            <EditText
+                    android:id="@+id/ed_tinggi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_bb"
+                    app:layout_constraintStart_toEndOf="@+id/tv_tinggi" android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp" android:inputType="numberDecimal"
+                    android:hint="@string/nomor"
+                    android:importantForAutofill="no" tools:targetApi="o"/>
+
+            <TextView
+                    android:id="@+id/tv_jk"
+                    android:text="@string/jenis_kelamin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="16dp"
+                    android:textSize="15sp"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_tinggi"
+                    android:layout_marginTop="28dp"
+                    app:layout_constraintHorizontal_bias="0.056"/>
+
+            <RadioGroup
+                    android:id="@+id/rg"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_tinggi"
+                    app:layout_constraintStart_toEndOf="@+id/tv_jk"
+                    android:orientation="horizontal">
+
+                <RadioButton
+                        android:id="@+id/pria"
+                        android:layout_marginRight="50dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/pria" android:layout_marginEnd="50dp"/>
+                <RadioButton
+                        android:id="@+id/w"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/wanita"/>
+            </RadioGroup>
+
+            <Button
+                    android:layout_marginTop="30dp"
+                    android:text="@string/b_hitung"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/b_hitung"
+                    app:layout_constraintTop_toBottomOf="@+id/rg" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"/>
+
+            <TextView
+                    android:id="@+id/tv_nilai"
+                    android:text="@string/nilai"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/b_hitung" android:visibility="gone"/>
+
+            <TextView
+                    android:id="@+id/tv_kategori"
+                    android:text="@string/kategori"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="64sp"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_nilai" android:visibility="gone"/>
+
+            <Button
+                    android:text="@string/b_lihat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/b_lihat"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/b_share" android:visibility="gone"/>
+
+            <Button
+                    android:layout_marginTop="30dp"
+                    android:text="@string/b_bagikan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/b_share"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_kategori"
+                    app:layout_constraintStart_toEndOf="@+id/tv_kategori"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp" android:visibility="gone"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>
